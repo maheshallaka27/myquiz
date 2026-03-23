@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Result</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: linear-gradient(135deg, #11998e, #38ef7d);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+      }
+
+      .box {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+      p {
+        font-size: 20px;
+      }
+
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background: #ff5722;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <h1>Quiz Result</h1>
+      <p id="score"></p>
+      <p id="attempted"></p>
+      <button onclick="restart()">Try Again</button>
+    </div>
+
+    <script>
+      const score = localStorage.getItem("score");
+      const total = localStorage.getItem("total");
+      const attempted = localStorage.getItem("attempted");
+
+      document.getElementById("score").innerText = `Score: ${score}/${total}`;
+      document.getElementById("attempted").innerText =
+        `Attempted: ${attempted}/${total}`;
+
+      function restart() {
+        window.location.href = "quiz.html";
+      }
+    </script>
+  </body>
+</html>
